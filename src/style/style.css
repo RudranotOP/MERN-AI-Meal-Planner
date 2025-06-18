@@ -998,3 +998,402 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
+
+/* Reset and style for button.nav-link */
+button.nav-link {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* Optional: Hover effect for better UX */
+button.nav-link:hover {
+  color: #2c7be5; /* or any accent color you use */
+}
+
+
+
+/* =======================
+📈 BMI Calculaotr
+======================= */
+.bmi-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--card-bg, #f9f9f9);
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+body.dark .bmi-container {
+  background: #1f1f1f;
+  color: white;
+}
+
+.bmi-inputs input {
+  margin: 10px;
+  padding: 10px;
+  width: 120px;
+}
+
+.bmi-inputs button {
+  padding: 10px 20px;
+  background: #2c7be5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bmi-result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+
+
+/* BMI Calculator Styling */
+.bmi-calculator {
+  background-color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #333;
+}
+
+.dark .bmi-calculator {
+  background-color: #1e1e2f;
+  color: #f1f1f1;
+}
+
+.bmi-calculator h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.bmi-calculator input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.dark .bmi-calculator input {
+  background: #2c2c3a;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+
+.bmi-calculator button {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-top: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bmi-calculator button:hover {
+  background-color: #005fcb;
+}
+
+.bmi-calculator p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-bmi-card-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* BMI Popup Modal */
+.bmi-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bmi-popup-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  animation: popupFade 0.3s ease;
+  text-align: center;
+}
+
+.bmi-popup-card.dark {
+  background-color: #1e293b;
+  color: white;
+}
+
+.bmi-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.bmi-input {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Button Style */
+.secondary-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background-color: #ea580c;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.bmi-result {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.bmi-result .category {
+  margin-top: 0.3rem;
+  font-weight: bold;
+  color: #22c55e; /* green for Normal; you can make dynamic color later */
+}
+
+
+
+.bmi-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bmi-popup-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 340px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.bmi-popup-card.dark {
+  background: #1f1f1f;
+  color: white;
+}
+
+.bmi-popup-card input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.calculate-btn {
+  background: #00b894;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.bmi-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.bmi-result {
+  margin-top: 1.2rem;
+}
+
+.bmi-circle {
+  width: 80px;
+  height: 80px;
+  border: 5px solid;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: scale(0.9); }
+}
+
+
+.bmi-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.bmi-text {
+  fill: #000;
+}
+
+.dark .bmi-text,
+.bmi-text.invisible-dark {
+  fill: transparent;
+}
+
+
+.bmi-circle-pulse {
+  animation: pulse-ring 1.5s infinite;
+  display: inline-block;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: 20px; /* spacing between button and circle */
+}
+
+.pulse-green {
+  --pulse-color: rgba(40, 167, 69, 0.7); /* green */
+}
+
+.pulse-yellow {
+  --pulse-color: rgba(255, 193, 7, 0.7); /* yellow */
+}
+
+.pulse-orange {
+  --pulse-color: rgba(253, 126, 20, 0.7); /* orange */
+}
+
+.pulse-red {
+  --pulse-color: rgba(220, 53, 69, 0.7); /* red */
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--pulse-color);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Spacing between buttons in hero */
+.hero-content .primary-btn,
+.hero-content .secondary-btn {
+  margin: 10px 10px 0 0;
+}
+
+/* Add space between Calculate button and Dark Mode toggle */
+.bmi-popup-card .btn-green {
+  margin-bottom: 20px;
+}
+
+/* Optional: Add margin above the circle result if needed */
+.bmi-circle-container {
+  margin-top: 20px;
+}

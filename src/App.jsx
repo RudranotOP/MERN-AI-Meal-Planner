@@ -10,7 +10,7 @@ import About from './components/About';
 import Dashboard from './components/Dashboard';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
-import BMICalculator from './pages/BMICalculator'; // ✅ Import the BMI component
+import BMICalculator from './components/BMICalculator'; // ✅ Import the BMI Calculator
 
 import { useState, useEffect } from 'react';
 
@@ -70,7 +70,7 @@ const AppWrapper = () => {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/bmi" element={<BMICalculator />} /> {/* ✅ BMI route added */}
+        <Route path="/bmi" element={<BMICalculator />} /> {/* ✅ New BMI Route */}
       </Routes>
 
       {/* 🔐 Modals */}

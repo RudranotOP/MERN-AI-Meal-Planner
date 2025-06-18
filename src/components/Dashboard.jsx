@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/style.css";
 import BmiChart from "./BmiChart";
+import BMICalculator from "./BMICalculator"; // ✅ Import BMI Calculator
 
 const Dashboard = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,10 +49,10 @@ const Dashboard = () => {
             <h3>Water Intake</h3>
             <p>2.3L</p>
           </div>
-          <div className="stat-card">
-            <h3>Check BMI</h3>
-            <p>Track your health</p>
-            <button className="btn-green">Open BMI Calculator</button>
+
+          {/* ✅ BMI Calculator embedded */}
+          <div className="stat-card bmi-wrapper">
+            <BMICalculator />
           </div>
         </div>
 
