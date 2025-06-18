@@ -723,228 +723,9 @@ body.dark .floating-icons .icon {
 
 
 
-/* =======================
-📊 Dashboard Layout
-======================= */
-.dashboard-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: linear-gradient(270deg, #f1f5f9, #e2f1f8);
-}
 
-.dashboard-wrapper.dark {
-  background: linear-gradient(270deg, #0f1727, #1e293b);
-  color: #f4f4f4;
-}
 
-/* =======================
-📁 Sidebar
-======================= */
-.sidebar {
-  width: 220px;
-  background-color: #0f172a;
-  color: white;
-  padding: 30px 20px;
-  height: 100%;
-  flex-shrink: 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-}
 
-.sidebar h2 {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar ul li {
-  margin: 20px 0;
-  font-size: 18px;
-}
-
-.sidebar ul li a {
-  color: #e2e8f0;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-  color: #4ade80;
-}
-
-.dashboard-wrapper.dark .sidebar {
-  background-color: #090c1b;
-  color: #f4f4f4;
-}
-
-.dashboard-wrapper.dark .sidebar ul li a {
-  color: #f4f4f4;
-}
-
-/* =======================
-🧠 Main Dashboard Content
-======================= */
-.dashboard-content {
-  flex-grow: 1;
-  padding: 40px;
-  overflow-y: auto;
-}
-
-.dashboard-content h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #0f172a;
-}
-
-.dashboard-content p {
-  color: #334155;
-  margin-bottom: 30px;
-}
-
-.dashboard-wrapper.dark .dashboard-content h1,
-.dashboard-wrapper.dark .dashboard-content p,
-.dashboard-wrapper.dark .dashboard-content .section-title {
-  color: #f4f4f4;
-}
-
-/* =======================
-📦 Stat Cards
-======================= */
-.stat-cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.stat-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  flex: 1;
-  min-width: 220px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-}
-
-.stat-card h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.stat-card p {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.dashboard-wrapper.dark .stat-card {
-  background-color: #1e293b;
-  color: #f4f4f4;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-}
-
-/* =======================
-✅ Buttons
-======================= */
-.btn-green {
-  background-color: #4ade80;
-  color: #0f172a;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: background 0.3s ease;
-}
-
-.btn-green:hover {
-  background-color: #22c55e;
-}
-
-.dashboard-wrapper.dark .btn-green {
-  background-color: #4ade80;
-  color: #0f172a;
-}
-
-.dashboard-wrapper.dark .btn-green:hover {
-  background-color: #22c55e;
-}
-
-/* =======================
-📊 Progress Bars
-======================= */
-.section-title {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.progress-group p {
-  margin-top: 15px;
-  font-weight: 500;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 14px;
-  background-color: #e2e8f0;
-  border-radius: 7px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.fill {
-  height: 100%;
-  background-color: #4ade80;
-  text-align: right;
-  padding-right: 10px;
-  color: #0f172a;
-  font-size: 12px;
-  line-height: 14px;
-  font-weight: 600;
-  border-radius: 7px;
-}
-
-.dashboard-wrapper.dark .progress-bar {
-  background-color: #334155;
-}
-
-.dashboard-wrapper.dark .fill {
-  background-color: #22c55e;
-  color: #0f172a;
-}
-
-/* =======================
-📈 BMI Chart Section
-======================= */
-.bmi-chart {
-  margin-top: 40px;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.bmi-chart h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.dashboard-wrapper.dark .bmi-chart {
-  background-color: #1e293b;
-  color: #f4f4f4;
-}
 
 /* =======================
 🌗 Dark Mode Toggle Switch
@@ -1018,382 +799,415 @@ button.nav-link:hover {
 
 
 /* =======================
-📈 BMI Calculaotr
+📈 BMI Calculator Styling (Updated)
 ======================= */
-.bmi-container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 12px;
-  background: var(--card-bg, #f9f9f9);
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
 
-body.dark .bmi-container {
-  background: #1f1f1f;
-  color: white;
-}
-
-.bmi-inputs input {
-  margin: 10px;
-  padding: 10px;
-  width: 120px;
-}
-
-.bmi-inputs button {
-  padding: 10px 20px;
-  background: #2c7be5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.bmi-result {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-
-
-/* BMI Calculator Styling */
-.bmi-calculator {
-  background-color: white;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  color: #333;
-}
-
-.dark .bmi-calculator {
-  background-color: #1e1e2f;
-  color: #f1f1f1;
-}
-
-.bmi-calculator h3 {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.bmi-calculator input {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 6px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #f9f9f9;
-}
-
-.dark .bmi-calculator input {
-  background: #2c2c3a;
-  border: 1px solid #444;
-  color: #f1f1f1;
-}
-
-.bmi-calculator button {
-  background-color: #007aff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  margin-top: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.bmi-calculator button:hover {
-  background-color: #005fcb;
-}
-
-.bmi-calculator p {
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-
-.hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.hero-right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-bmi-card-wrapper {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* BMI Popup Modal */
+/* BMI Modal Overlay */
 .bmi-popup-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.bmi-popup-card {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  width: 300px;
-  animation: popupFade 0.3s ease;
-  text-align: center;
-}
-
-.bmi-popup-card.dark {
-  background-color: #1e293b;
-  color: white;
-}
-
-.bmi-popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.bmi-input {
-  width: 100%;
-  padding: 0.6rem;
-  margin: 0.5rem 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* Button Style */
-.secondary-btn {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #f97316;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.secondary-btn:hover {
-  background-color: #ea580c;
-}
-
-@keyframes popupFade {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.bmi-result {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-.bmi-result .category {
-  margin-top: 0.3rem;
-  font-weight: bold;
-  color: #22c55e; /* green for Normal; you can make dynamic color later */
-}
-
-
-
-.bmi-popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* BMI Popup Card */
 .bmi-popup-card {
-  background: #fff;
+  background-color: #1e1e1e; /* Always dark */
+  color: #fff;
   padding: 2rem;
-  border-radius: 16px;
   width: 340px;
+  border-radius: 16px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  position: relative;
   text-align: center;
+  position: relative;
   animation: fadeIn 0.3s ease-in-out;
 }
 
-.bmi-popup-card.dark {
-  background: #1f1f1f;
-  color: white;
-}
-
-.bmi-popup-card input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-.calculate-btn {
-  background: #00b894;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
+/* Close button */
 .bmi-close-btn {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 1.2rem;
-  color: inherit;
+  font-size: 1.4rem;
+  color: #fff;
   cursor: pointer;
 }
 
-.bmi-result {
-  margin-top: 1.2rem;
+/* Labels */
+.bmi-popup-card label {
+  display: block;
+  margin: 10px 0 4px;
+  text-align: left;
+  font-size: 14px;
+  color: #ddd;
 }
 
+/* Inputs */
+.bmi-popup-card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: #2c2c2c;
+  color: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Calculate Button */
+.bmi-popup-card .btn-green {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding: 10px 18px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bmi-popup-card .btn-green:hover {
+  background-color: #218838;
+}
+
+/* BMI Result Circle Pulse Container */
+.bmi-circle-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =======================
+   Circular Pulse Animation per Category
+======================= */
+.bmi-pulse-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Pulse variants */
+.bmi-pulse-wrapper.green {
+  animation: pulse-green 2s infinite;
+}
+.bmi-pulse-wrapper.orange {
+  animation: pulse-orange 2s infinite;
+}
+.bmi-pulse-wrapper.red {
+  animation: pulse-red 2s infinite;
+}
+
+/* Circle inside pulse */
 .bmi-circle {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border: 5px solid;
   border-radius: 50%;
-  margin: 0 auto 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
   font-weight: bold;
+  background: #1e1e1e;
+  color: #fff;
+  z-index: 2;
 }
 
-.dark-toggle {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  margin-top: 1.2rem;
-  cursor: pointer;
-  color: inherit;
+/* Dynamic pulse glow colors */
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(40, 167, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
 }
 
+@keyframes pulse-orange {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.6); }
+  70% { box-shadow: 0 0 0 20px rgba(220, 53, 69, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* BMI Text below the circle */
+.bmi-category-text {
+  font-size: 1rem;
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+
+/* Fade In/Out animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
-.fade-out {
-  animation: fadeOut 0.3s ease-in-out forwards;
-}
-
 @keyframes fadeOut {
-  to { opacity: 0; transform: scale(0.9); }
+  to { opacity: 0; transform: scale(0.95); }
 }
 
-
-.bmi-pulse-ring {
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  70% {
-    transform: scale(1.1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.bmi-text {
-  fill: #000;
-}
-
-.dark .bmi-text,
-.bmi-text.invisible-dark {
-  fill: transparent;
-}
-
-
-.bmi-circle-pulse {
-  animation: pulse-ring 1.5s infinite;
-  display: inline-block;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  margin-top: 20px; /* spacing between button and circle */
-}
-
-.pulse-green {
-  --pulse-color: rgba(40, 167, 69, 0.7); /* green */
-}
-
-.pulse-yellow {
-  --pulse-color: rgba(255, 193, 7, 0.7); /* yellow */
-}
-
-.pulse-orange {
-  --pulse-color: rgba(253, 126, 20, 0.7); /* orange */
-}
-
-.pulse-red {
-  --pulse-color: rgba(220, 53, 69, 0.7); /* red */
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 var(--pulse-color);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-/* Spacing between buttons in hero */
+/* Button spacing on Hero section */
 .hero-content .primary-btn,
 .hero-content .secondary-btn {
   margin: 10px 10px 0 0;
 }
 
-/* Add space between Calculate button and Dark Mode toggle */
-.bmi-popup-card .btn-green {
-  margin-bottom: 20px;
+
+/* =======================
+📊 Dashboard Layout Fix
+======================= */
+
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(270deg, #f1f5f9, #e2f1f8);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Optional: Add margin above the circle result if needed */
-.bmi-circle-container {
-  margin-top: 20px;
+.dashboard-wrapper.dark {
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #2d3748;
+  color: white;
+  padding: 2rem 1rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1.2rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  color: #4fd1c5;
+}
+
+/* Content Area */
+.dashboard-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+}
+
+.dashboard-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-content p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.dark .dashboard-content p {
+  color: #ccc;
+}
+
+/* Stats Cards */
+.stat-cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #333;
+}
+
+.dark .stat-card {
+  background: #2e2e2e;
+  color: #f0f0f0;
+}
+
+/* Progress Section */
+.section-title {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.progress-group p {
+  margin: 0.6rem 0 0.3rem;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 16px;
+  background: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.fill {
+  height: 100%;
+  background: #00b894;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 16px;
+  transition: width 0.4s ease;
+}
+
+/* BMI Chart */
+.bmi-chart {
+  margin-top: 2rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dark .bmi-chart {
+  background: #2e2e2e;
+  color: #f0f0f0;
+}
+
+/* Dark Mode Toggle */
+.dashboard-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 999;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider.round {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.slider.round:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider.round {
+  background-color: #4fd1c5;
+}
+
+input:checked + .slider.round:before {
+  transform: translateX(22px);
+}
+
+/* =======================
+📌 Stat Card Hover Effect
+======================= */
+.stat-card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  background-color: #f0f9ff; /* Soft blue tint on hover */
+}
+
+/* Dark mode */
+.dark .stat-card {
+  background: #2e2e2e;
+  color: #f0f0f0;
+}
+
+.dark .stat-card:hover {
+  background-color: #3a3a3a; /* Subtle lighter tint for dark mode */
+}
+
+
+/* =======================
+🎯 Weekly Goals Title Dark Fix
+======================= */
+.section-title {
+  color: #333;
+}
+
+.dark .section-title {
+  color: #f0f0f0;
 }

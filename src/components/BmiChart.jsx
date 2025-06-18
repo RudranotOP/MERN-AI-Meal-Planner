@@ -1,27 +1,28 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip } from "chart.js";
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+} from "recharts";
 
-ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip);
+const data = [
+  { date: "Mon", bmi: 22.5 },
+  { date: "Tue", bmi: 23.0 },
+  { date: "Wed", bmi: 23.1 },
+  { date: "Thu", bmi: 22.9 },
+  { date: "Fri", bmi: 23.3 },
+  { date: "Sat", bmi: 23.0 },
+  { date: "Sun", bmi: 22.8 },
+];
 
-const BmiChart = () => {
-  const data = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri"],
-    datasets: [
-      {
-        label: "BMI Value",
-        backgroundColor: "#4ade80",
-        data: [22.5, 22.3, 22.6, 22.4, 22.7],
-      },
-    ],
-  };
-
-  return (
-    <div className="bmi-chart">
-      <h3>📈 Your BMI History</h3>
-      <Bar data={data} height={100} />
-    </div>
-  );
-};
+const BmiChart = () => (
+  <ResponsiveContainer width="100%" height={300}>
+    <LineChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="date" />
+      <YAxis domain={[20, 25]} />
+      <Tooltip />
+      <Line type="monotone" dataKey="bmi" stroke="#82ca9d" strokeWidth={2} />
+    </LineChart>
+  </ResponsiveContainer>
+);
 
 export default BmiChart;

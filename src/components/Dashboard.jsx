@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/style.css";
 import BmiChart from "./BmiChart";
-import BMICalculator from "./BMICalculator"; // ✅ Import BMI Calculator
 
 const Dashboard = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,11 +30,12 @@ const Dashboard = () => {
         </ul>
       </aside>
 
-      {/* Main Content */}
+      {/* Main Dashboard Content */}
       <main className="dashboard-content">
         <h1>Your Health Dashboard</h1>
         <p>👋 Hello, Rudra! Welcome back to your healthy journey.</p>
 
+        {/* Quick Stats */}
         <div className="stat-cards">
           <div className="stat-card">
             <h3>Today's Calories</h3>
@@ -49,13 +49,9 @@ const Dashboard = () => {
             <h3>Water Intake</h3>
             <p>2.3L</p>
           </div>
-
-          {/* ✅ BMI Calculator embedded */}
-          <div className="stat-card bmi-wrapper">
-            <BMICalculator />
-          </div>
         </div>
 
+        {/* Weekly Goals Progress */}
         <h2 className="section-title">Weekly Goals</h2>
         <div className="progress-group">
           <p>Calories</p>
@@ -72,6 +68,7 @@ const Dashboard = () => {
           </div>
         </div>
 
+        {/* BMI History Chart */}
         <div className="bmi-chart">
           <h3>📈 Your BMI History</h3>
           <BmiChart />

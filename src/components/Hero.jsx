@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../style/style.css';
 import mealImage from '../assets/float2.jpeg';
-import { FaMoon, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 const Hero = () => {
   const tips = [
@@ -16,12 +16,10 @@ const Hero = () => {
   const [currentTip, setCurrentTip] = useState(0);
   const [fade, setFade] = useState(true);
   const [showBmi, setShowBmi] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   const [bmi, setBmi] = useState(null);
   const [bmiCategory, setBmiCategory] = useState('');
-  const [isClosing, setIsClosing] = useState(false);
   const modalRef = useRef();
 
   useEffect(() => {
@@ -51,26 +49,19 @@ const Hero = () => {
   };
 
   const getBmiColor = () => {
-    if (bmiCategory === 'Normal') return '#28a745'; // green
-    if (bmiCategory === 'Underweight') return '#ffc107'; // yellow
-    if (bmiCategory === 'Overweight') return '#fd7e14'; // orange
-    return '#dc3545'; // red
+    if (bmiCategory === 'Normal') return '#28a745';
+    if (bmiCategory === 'Underweight') return '#ffc107';
+    return '#dc3545';
   };
 
-  const getPulseClass = () => {
-    if (bmiCategory === 'Normal') return 'pulse-green';
-    if (bmiCategory === 'Underweight') return 'pulse-yellow';
-    if (bmiCategory === 'Overweight') return 'pulse-orange';
-    if (bmiCategory === 'Obese') return 'pulse-red';
-    return '';
+  const getBmiPulseClass = () => {
+    if (bmiCategory === 'Normal') return 'green';
+    if (bmiCategory === 'Underweight') return 'orange';
+    return 'red';
   };
 
   const closePopup = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setShowBmi(false);
-      setIsClosing(false);
-    }, 300);
+    setShowBmi(false); // 👈 Closes instantly without delay
   };
 
   return (
@@ -84,18 +75,23 @@ const Hero = () => {
         </div>
 
         <a href="select-plan.html" className="primary-btn pulse">Generate Meal Plan</a>
-        <button className="secondary-btn pulse" onClick={() => setShowBmi(true)}>Check BMI</button>
+        <button
+          className="secondary-btn pulse"
+          onClick={() => setShowBmi(true)}
+          style={{ marginTop: '12px' }}
+        >
+          Check BMI
+        </button>
       </div>
 
       <div className="hero-image">
         <img src={mealImage} alt="Meal" className="floating-meal" />
       </div>
 
-      {/* BMI Popup */}
       {showBmi && (
         <div className="bmi-popup-overlay" onClick={closePopup}>
           <div
-            className={`bmi-popup-card ${darkMode ? 'dark' : ''} ${isClosing ? 'fade-out' : ''}`}
+            className="bmi-popup-card dark"
             onClick={(e) => e.stopPropagation()}
             ref={modalRef}
           >
@@ -117,52 +113,25 @@ const Hero = () => {
               onChange={(e) => setWeight(e.target.value)}
               placeholder="e.g. 65"
             />
-            <button className="btn-green" onClick={calculateBMI}>Calculate</button>
+            <button className="btn-green" onClick={calculateBMI}>
+              Calculate
+            </button>
 
             {bmi && (
               <div className="bmi-circle-container">
-                <div className={`bmi-circle-pulse ${getPulseClass()}`}>
-                  <svg width="120" height="120">
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      stroke="#e6e6e6"
-                      strokeWidth="10"
-                      fill="none"
-                    />
-                    <circle
-                      cx="60"
-                      cy="60"
-                      r="50"
-                      stroke={getBmiColor()}
-                      strokeWidth="10"
-                      fill="none"
-                      strokeDasharray="314"
-                      strokeDashoffset="0"
-                      transform="rotate(-90 60 60)"
-                    />
-                    <text
-                      x="60"
-                      y="65"
-                      textAnchor="middle"
-                      fontSize="20"
-                      fontWeight="bold"
-                      fill={darkMode ? '#fff' : '#000'}
-                    >
-                      {bmi}
-                    </text>
-                  </svg>
+                <div className={`bmi-pulse-wrapper ${getBmiPulseClass()}`}>
+                  <div
+                    className="bmi-circle"
+                    style={{ borderColor: getBmiColor() }}
+                  >
+                    {bmi}
+                  </div>
                 </div>
-                <p style={{ fontWeight: 'bold', marginTop: '10px' }}>
+                <p className="bmi-category-text">
                   You are <span style={{ color: getBmiColor() }}>{bmiCategory}</span>.
                 </p>
               </div>
             )}
-
-            <div className="bmi-dark-toggle" onClick={() => setDarkMode(!darkMode)}>
-              <FaMoon className="moon-icon" />
-            </div>
           </div>
         </div>
       )}
