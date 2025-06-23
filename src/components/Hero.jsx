@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../style/style.css';
 import mealImage from '../assets/float2.jpeg';
 import { FaTimes } from 'react-icons/fa';
 
 const Hero = () => {
+  const location = useLocation();
+
   const tips = [
     "💧 Stay hydrated! Drink at least 8 glasses of water daily.",
     "🥗 Add more greens and fiber to your meals for better digestion.",
@@ -64,6 +67,11 @@ const Hero = () => {
     setShowBmi(false);
   };
 
+  // 🔒 Hide Hero on /generate-meal-plan page
+  if (location.pathname === '/generate-meal-plan') {
+    return null;
+  }
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -87,7 +95,6 @@ const Hero = () => {
         <img src={mealImage} alt="Meal" className="floating-meal" />
       </div>
 
-      {/* BMI Popup */}
       {showBmi && (
         <div className="bmi-popup-overlay" onClick={closePopup}>
           <div
