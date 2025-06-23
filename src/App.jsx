@@ -11,7 +11,6 @@ import Dashboard from './components/Dashboard';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import BMICalculator from './components/BMICalculator';
-// ❌ Removed: import GenerateMealPlan from './components/GenerateMealPlan';
 
 import { useState, useEffect } from 'react';
 
@@ -50,7 +49,7 @@ const AppWrapper = () => {
         <span className="icon icon4">🍞</span>
       </div>
 
-      {/* ✅ Hide Navbar only on /dashboard */}
+      {/* ✅ Show Navbar on all pages except /dashboard */}
       {location.pathname !== "/dashboard" && (
         <Navbar onLoginClick={openLogin} onToggleDark={() => setDarkMode(!darkMode)} />
       )}
@@ -69,7 +68,6 @@ const AppWrapper = () => {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* ❌ Removed: <Route path="/generate-meal-plan" element={<GenerateMealPlan />} /> */}
         <Route path="/bmi" element={<BMICalculator />} />
       </Routes>
 
