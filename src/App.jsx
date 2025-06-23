@@ -11,7 +11,7 @@ import Dashboard from './components/Dashboard';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import BMICalculator from './components/BMICalculator';
-import GeneratePlan from './components/GeneratePlan'; // ✅ Re-added
+
 
 import { useState, useEffect } from 'react';
 
@@ -50,15 +50,11 @@ const AppWrapper = () => {
         <span className="icon icon4">🍞</span>
       </div>
 
-      {/* ✅ Hide Navbar on Dashboard only */}
+      {/* ✅ Hide navbar only on dashboard */}
       {location.pathname !== "/dashboard" && (
-        <Navbar
-          onLoginClick={openLogin}
-          onToggleDark={() => setDarkMode(!darkMode)}
-        />
+        <Navbar onLoginClick={openLogin} onToggleDark={() => setDarkMode(!darkMode)} />
       )}
 
-      {/* 🚀 Routes */}
       <Routes>
         <Route
           path="/"
@@ -73,11 +69,11 @@ const AppWrapper = () => {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/generate" element={<GeneratePlan />} /> {/* ✅ New Generate Plan Route */}
+        
         <Route path="/bmi" element={<BMICalculator />} />
       </Routes>
 
-      {/* 🔐 Auth Modals */}
+      {/* 🔐 Modals */}
       {showLogin && (
         <LoginModal isVisible onClose={closeModals} onSwitch={openRegister} />
       )}

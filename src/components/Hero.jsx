@@ -74,8 +74,6 @@ const Hero = () => {
           {tips[currentTip]}
         </div>
 
-        {/* ❌ Removed Generate Meal Plan button */}
-
         <button
           className="secondary-btn pulse"
           onClick={() => setShowBmi(true)}
@@ -97,7 +95,9 @@ const Hero = () => {
             onClick={(e) => e.stopPropagation()}
             ref={modalRef}
           >
-            <button className="bmi-close-btn" onClick={closePopup}><FaTimes /></button>
+            <button className="bmi-close-btn" onClick={closePopup}>
+              <FaTimes />
+            </button>
 
             <h3>🧮 BMI Calculator</h3>
 
@@ -130,7 +130,8 @@ const Hero = () => {
                   </div>
                 </div>
                 <p className="bmi-category-text">
-                  You are <span style={{ color: getBmiColor() }}>{bmiCategory}</span>.
+                  You are{' '}
+                  <span style={{ color: getBmiColor() }}>{bmiCategory}</span>.
                 </p>
               </div>
             )}
