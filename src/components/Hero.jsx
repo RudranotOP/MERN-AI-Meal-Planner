@@ -61,7 +61,7 @@ const Hero = () => {
   };
 
   const closePopup = () => {
-    setShowBmi(false); // 👈 Closes instantly without delay
+    setShowBmi(false);
   };
 
   return (
@@ -74,7 +74,8 @@ const Hero = () => {
           {tips[currentTip]}
         </div>
 
-        <a href="select-plan.html" className="primary-btn pulse">Generate Meal Plan</a>
+        {/* ❌ Removed Generate Meal Plan button */}
+
         <button
           className="secondary-btn pulse"
           onClick={() => setShowBmi(true)}
@@ -88,6 +89,7 @@ const Hero = () => {
         <img src={mealImage} alt="Meal" className="floating-meal" />
       </div>
 
+      {/* BMI Popup */}
       {showBmi && (
         <div className="bmi-popup-overlay" onClick={closePopup}>
           <div

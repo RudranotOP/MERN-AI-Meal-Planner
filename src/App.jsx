@@ -10,11 +10,11 @@ import About from './components/About';
 import Dashboard from './components/Dashboard';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
-import BMICalculator from './components/BMICalculator'; // ✅ Import the BMI Calculator
+import BMICalculator from './components/BMICalculator';
+import GeneratePlan from './components/GeneratePlan'; // ✅ Re-added
 
 import { useState, useEffect } from 'react';
 
-// ✅ Wrapper to use `useLocation`
 const AppWrapper = () => {
   const location = useLocation();
   const [showLogin, setShowLogin] = useState(false);
@@ -50,9 +50,12 @@ const AppWrapper = () => {
         <span className="icon icon4">🍞</span>
       </div>
 
-      {/* ✅ Show Navbar only on non-dashboard routes */}
+      {/* ✅ Hide Navbar on Dashboard only */}
       {location.pathname !== "/dashboard" && (
-        <Navbar onLoginClick={openLogin} onToggleDark={() => setDarkMode(!darkMode)} />
+        <Navbar
+          onLoginClick={openLogin}
+          onToggleDark={() => setDarkMode(!darkMode)}
+        />
       )}
 
       {/* 🚀 Routes */}
@@ -70,10 +73,11 @@ const AppWrapper = () => {
           }
         />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/bmi" element={<BMICalculator />} /> {/* ✅ New BMI Route */}
+        <Route path="/generate" element={<GeneratePlan />} /> {/* ✅ New Generate Plan Route */}
+        <Route path="/bmi" element={<BMICalculator />} />
       </Routes>
 
-      {/* 🔐 Modals */}
+      {/* 🔐 Auth Modals */}
       {showLogin && (
         <LoginModal isVisible onClose={closeModals} onSwitch={openRegister} />
       )}
@@ -84,7 +88,6 @@ const AppWrapper = () => {
   );
 };
 
-// ✅ Wrap everything inside BrowserRouter
 function App() {
   return (
     <Router>
